@@ -1,5 +1,3 @@
-<img width="1860" height="865" alt="ss1_day_52" src="https://github.com/user-attachments/assets/29bd39a4-e846-401f-90cb-a08cfbe28e49" /><div align="center">
-
 # 💱 Currency Converter
 
 <img src="https://img.icons8.com/color/200/currency-exchange.png" width="120"/>
