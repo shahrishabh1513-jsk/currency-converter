@@ -44,3 +44,19 @@ A modern **Currency Converter Web App** built using **HTML, CSS, and JavaScript*
 - 🚩 Flags API (Country flags)
 
 ---
+
+## 🎯 Future Enhancements
+
+- 📊 Currency history charts
+- 🌙 Dark mode toggle
+- 💾 Save favorite currencies
+- 📱 PWA support
+- 🔔 Offline fallback
+
+---
+
+## 👨‍💻 Live:
+
+---
+
+⭐ If you like this project, consider giving it a **star**!
