@@ -1,3 +1,5 @@
+<div align="center">
+
 # 💱 Currency Converter
 
 <img src="https://img.icons8.com/color/200/currency-exchange.png" width="120"/>
