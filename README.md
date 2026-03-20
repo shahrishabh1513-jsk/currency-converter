@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1860" height="865" alt="ss1_day_52" src="https://github.com/user-attachments/assets/29bd39a4-e846-401f-90cb-a08cfbe28e49" /><div align="center">
 
 # 💱 Currency Converter
 
@@ -55,7 +55,13 @@ A modern **Currency Converter Web App** built using **HTML, CSS, and JavaScript*
 
 ---
 
+## 📸 Screenshot
+<img width="1860" height="865" alt="ss1_day_52" src="https://github.com/user-attachments/assets/418dc745-9dd7-429f-85bc-8810941296f5" />
+
+---
+
 ## 👨‍💻 Live:
+https://shahrishabh1513-jsk.github.io/currency-converter/
 
 ---
 
