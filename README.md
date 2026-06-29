@@ -56,7 +56,8 @@ A modern **Currency Converter Web App** built using **HTML, CSS, and JavaScript*
 ---
 
 ## 📸 Screenshot
-<img width="1860" height="865" alt="ss1_day_52" src="https://github.com/user-attachments/assets/418dc745-9dd7-429f-85bc-8810941296f5" />
+<img width="1496" height="799" alt="Screenshot 2026-05-06 222034" src="https://github.com/user-attachments/assets/39fdf3bc-3618-40d9-901a-903bb8dac4df" />
+
 
 ---
 
