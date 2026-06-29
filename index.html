@@ -1,82 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>OmniCalc Pro | Premium Multi-Tool Suite</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f5b041'><path d='M21,5H3V7H21V5M21,11H3V13H21V11M21,17H3V19H21V17M13,3L16,6L13,9V3Z'/></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OmniCalc Pro – The ultimate all-in-one calculator and unit conversion platform. Currency, BMI, EMI, GST, scientific calculator and more.">
+  <title>OmniCalc Pro | All-in-One Calculator & Converter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-wrapper">
-        <!-- DASHBOARD / CATEGORY PANEL -->
-        <aside class="dashboard">
-            <div class="brand">
-                <div class="brand-icon"><i class="fas fa-calculator"></i></div>
-                <h2>Omni<span>Calc</span></h2>
-                <p class="brand-tag">multi-tool studio</p>
-            </div>
-            <nav class="calc-nav">
-                <button class="nav-btn active" data-tool="currency">
-                    <i class="fas fa-exchange-alt"></i>
-                    <span>Currency</span>
-                </button>
-                <button class="nav-btn" data-tool="length">
-                    <i class="fas fa-ruler-combined"></i>
-                    <span>Length</span>
-                </button>
-                <button class="nav-btn" data-tool="area">
-                    <i class="fas fa-square"></i>
-                    <span>Area</span>
-                </button>
-                <button class="nav-btn" data-tool="volume">
-                    <i class="fas fa-cube"></i>
-                    <span>Volume</span>
-                </button>
-                <button class="nav-btn" data-tool="weight">
-                    <i class="fas fa-weight-hanging"></i>
-                    <span>Weight</span>
-                </button>
-                <button class="nav-btn" data-tool="temperature">
-                    <i class="fas fa-thermometer-half"></i>
-                    <span>Temp</span>
-                </button>
-                <button class="nav-btn" data-tool="numbersystem">
-                    <i class="fas fa-code"></i>
-                    <span>Number System</span>
-                </button>
-            </nav>
-            <div class="dashboard-footer">
-                <a href="https://github.com/shahrishabh1513-jsk" target="_blank" class="github-link">
-                    <i class="fab fa-github"></i> shahrishabh1513
-                </a>
-            </div>
-        </aside>
 
-        <!-- MAIN CARD CONTENT (DYNAMIC) -->
-        <main class="calculator-panel">
-            <div class="dynamic-card" id="dynamicCard">
-                <div class="card-header-dynamic">
-                    <div class="hero-icon"><i class="fas fa-globe-americas"></i></div>
-                    <h1 id="toolTitle">Currency Converter</h1>
-                    <p id="toolSubtitle">Real-time exchange · live rates</p>
-                </div>
-                <div id="toolInterface" class="tool-interface">
-                    <!-- JS will inject active tool UI -->
-                </div>
-            </div>
-            <div class="copyright-footer">
-                <span>© 2026 | RT1504</span>
-                <span class="sep">•</span>
-                <a href="https://github.com/shahrishabh1513-jsk" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <span class="sep">•</span>
-                <span>OmniCalc Pro</span>
-            </div>
-        </main>
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-inner">
+    <div class="loader-logo"><i class="fas fa-infinity"></i></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <p>OmniCalc Pro</p>
+  </div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- MOUSE GLOW -->
+<div class="mouse-glow" id="mouseGlow"></div>
+
+<!-- BACKGROUND BLOBS -->
+<div class="bg-blobs">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-infinity"></i></div>
+      <span>Omni<strong>Calc</strong> <em>Pro</em></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#converters" class="nav-link">Converters</a>
+      <a href="#calculators" class="nav-link">Calculators</a>
+      <a href="#tools" class="nav-link">Tools</a>
+      <a href="#about" class="nav-link">About</a>
+    </nav>
+
+   <!--<div class="nav-actions">
+      <button class="search-toggle" id="searchToggle" title="Search tools"><i class="fas fa-search"></i></button>
+      <a href="https://github.com/shahrishabh1513-jsk" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>-->
+  </div>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar" id="searchBar">
+    <div class="search-inner">
+      <i class="fas fa-search"></i>
+      <input type="text" id="globalSearch" placeholder="Search any calculator or converter… (e.g. BMI, currency, length)">
+      <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
     </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</header>
 
-    <script src="./JS/codes.js"></script>
-    <script src="./JS/script.js"></script>
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge reveal"><i class="fas fa-bolt"></i> Trusted by 10,000+ users</div>
+    <h1 class="hero-title reveal">
+      The Ultimate<br>
+      <span class="gradient-text">Calculator &amp; Converter</span><br>
+      Platform
+    </h1>
+    <p class="hero-sub reveal">Convert units, calculate finances, solve everyday problems, and boost productivity with beautifully designed modern tools.</p>
+    <div class="hero-btns reveal">
+      <a href="#calculators" class="btn-primary"><i class="fas fa-rocket"></i> Get Started</a>
+      <a href="#converters" class="btn-secondary"><i class="fas fa-compass"></i> Explore Tools</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat"><span class="stat-num" data-target="100">0</span><span>+</span><small>Conversions</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="20">0</span><span>+</span><small>Calculators</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="160">0</span><span>+</span><small>Currencies</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="100">0</span><span>%</span><small>Free Forever</small></div>
+    </div>
+  </div>
+
+  <!-- Floating tool preview cards -->
+  <div class="hero-visual">
+    <div class="float-card fc-1 reveal-right">
+      <i class="fas fa-exchange-alt"></i>
+      <div><strong>₹ 84.2</strong><small>1 USD → INR</small></div>
+    </div>
+    <div class="float-card fc-2 reveal-right">
+      <i class="fas fa-heartbeat"></i>
+      <div><strong>BMI 22.4</strong><small>Normal Weight</small></div>
+    </div>
+    <div class="float-card fc-3 reveal-right">
+      <i class="fas fa-percent"></i>
+      <div><strong>₹ 18,000</strong><small>EMI / month</small></div>
+    </div>
+    <div class="hero-card-main reveal-right">
+      <div class="hcm-top"><i class="fas fa-calculator"></i> OmniCalc Pro</div>
+      <div class="hcm-display">24,680.00</div>
+      <div class="hcm-label">Currency · 1 BTC → INR</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE PILLS -->
+<section class="features-strip reveal">
+  <div class="feature-pill"><i class="fas fa-satellite-dish"></i> Real-time Rates</div>
+  <div class="feature-pill"><i class="fas fa-mobile-alt"></i> Mobile Ready</div>
+  <div class="feature-pill"><i class="fas fa-lock"></i> Private &amp; Secure</div>
+  <div class="feature-pill"><i class="fas fa-history"></i> Calc History</div>
+  <div class="feature-pill"><i class="fas fa-copy"></i> One-click Copy</div>
+  <div class="feature-pill"><i class="fas fa-keyboard"></i> Keyboard Support</div>
+</section>
+
+<!-- ══════════════ CONVERTERS ══════════════ -->
+<section class="section" id="converters">
+  <div class="section-label reveal"><i class="fas fa-arrows-left-right"></i> Unit Converters</div>
+  <h2 class="section-title reveal">All Converters in One Place</h2>
+  <p class="section-sub reveal">Pick any category. Get instant, accurate results.</p>
+
+  <div class="tool-grid reveal-grid">
+    <div class="tool-card" data-tool="currency">
+      <div class="tc-icon" style="--ic:#2563EB"><i class="fas fa-globe-americas"></i></div>
+      <h3>Currency</h3><p>Live exchange rates for 160+ currencies with country flags.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="length">
+      <div class="tc-icon" style="--ic:#0891b2"><i class="fas fa-ruler-combined"></i></div>
+      <h3>Length</h3><p>Meter, km, mile, foot, inch, yard and more with slider input.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="area">
+      <div class="tc-icon" style="--ic:#7c3aed"><i class="fas fa-vector-square"></i></div>
+      <h3>Area</h3><p>Square meter, acre, hectare, sq foot, sq km and more.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="volume">
+      <div class="tc-icon" style="--ic:#059669"><i class="fas fa-fill-drip"></i></div>
+      <h3>Volume</h3><p>Liter, gallon, ml, cup, pint, quart, tablespoon and more.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="weight">
+      <div class="tc-icon" style="--ic:#dc2626"><i class="fas fa-weight-hanging"></i></div>
+      <h3>Weight</h3><p>Kilogram, pound, gram, ounce, tonne, stone and more.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="temperature">
+      <div class="tc-icon" style="--ic:#d97706"><i class="fas fa-thermometer-half"></i></div>
+      <h3>Temperature</h3><p>Celsius, Fahrenheit, Kelvin and Rankine. All at once.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="numbersystem">
+      <div class="tc-icon" style="--ic:#6366f1"><i class="fas fa-code"></i></div>
+      <h3>Number System</h3><p>Decimal, Binary, Octal, Hex conversions in real-time.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CALCULATORS ══════════════ -->
+<section class="section bg-tinted" id="calculators">
+  <div class="section-label reveal"><i class="fas fa-calculator"></i> Calculators</div>
+  <h2 class="section-title reveal">Powerful Calculators</h2>
+  <p class="section-sub reveal">Every calculator you'll ever need — beautifully designed.</p>
+
+  <div class="tool-grid reveal-grid">
+    <div class="tool-card" data-tool="scientific">
+      <div class="tc-icon" style="--ic:#2563EB"><i class="fas fa-square-root-alt"></i></div>
+      <h3>Scientific</h3><p>Trig, log, power, constants, full scientific mode with history.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="bmi">
+      <div class="tc-icon" style="--ic:#10b981"><i class="fas fa-heartbeat"></i></div>
+      <h3>BMI Calculator</h3><p>Body Mass Index with animated gauge and health category.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="age">
+      <div class="tc-icon" style="--ic:#8b5cf6"><i class="fas fa-birthday-cake"></i></div>
+      <h3>Age Calculator</h3><p>Exact age in years, months and days. Live countdown.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="emi">
+      <div class="tc-icon" style="--ic:#f59e0b"><i class="fas fa-landmark"></i></div>
+      <h3>EMI Calculator</h3><p>Monthly EMI, total interest and pie chart breakdown.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="gst">
+      <div class="tc-icon" style="--ic:#06b6d4"><i class="fas fa-receipt"></i></div>
+      <h3>GST Calculator</h3><p>Add or reverse GST instantly with inclusive/exclusive toggle.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="percentage">
+      <div class="tc-icon" style="--ic:#ec4899"><i class="fas fa-percent"></i></div>
+      <h3>Percentage</h3><p>Find %, increase, decrease and what % of a number.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="tool-card" data-tool="discount">
+      <div class="tc-icon" style="--ic:#dc2626"><i class="fas fa-tag"></i></div>
+      <h3>Discount</h3><p>Original price, discount %, savings and final price.</p>
+      <button class="tc-btn">Open <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TOOL MODAL ══════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="tool-modal" id="toolModal">
+  <div class="modal-header">
+    <div class="modal-title-wrap">
+      <div class="modal-icon" id="modalIcon"><i class="fas fa-calculator"></i></div>
+      <div>
+        <h2 id="modalTitle">Tool</h2>
+        <p id="modalSub">Subtitle</p>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-action-btn" id="copyResultBtn" title="Copy Result" onclick="copyResult()"><i class="fas fa-copy"></i></button>
+      <button class="modal-action-btn" id="resetBtn" title="Reset" onclick="resetTool()"><i class="fas fa-redo"></i></button>
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+  <div class="modal-body" id="modalBody"></div>
+</div>
+
+<!-- ══════════════ TOOLS / HISTORY / NOTES ══════════════ -->
+<section class="section" id="tools">
+  <div class="section-label reveal"><i class="fas fa-toolbox"></i> Utility Tools</div>
+  <h2 class="section-title reveal">History &amp; Notes</h2>
+  <div class="utility-grid reveal-grid">
+    <!-- HISTORY -->
+    <div class="utility-card">
+      <div class="uc-head">
+        <i class="fas fa-history"></i>
+        <h3>Calculation History</h3>
+        <button onclick="clearHistory()" class="uc-action">Clear All</button>
+      </div>
+      <div id="historyList" class="history-list"><p class="empty-msg">No calculations yet. Start converting!</p></div>
+    </div>
+    <!-- NOTES -->
+    <div class="utility-card">
+      <div class="uc-head">
+        <i class="fas fa-sticky-note"></i>
+        <h3>Quick Notes</h3>
+        <button onclick="saveNote()" class="uc-action">Save</button>
+      </div>
+      <textarea id="notesArea" class="notes-textarea" placeholder="Jot down your calculations, formulas or notes here. Auto-saved!"></textarea>
+      <div class="notes-footer"><small id="notesSaved"></small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section class="section bg-tinted" id="about">
+  <div class="section-label reveal"><i class="fas fa-user"></i> About</div>
+  <h2 class="section-title reveal">Built by Rishabh Shah</h2>
+  <p class="section-sub reveal">A developer passionate about crafting clean, useful, and delightful web experiences.</p>
+  <div class="about-grid reveal-grid">
+    <div class="about-card"><i class="fas fa-code"></i><h4>Clean Code</h4><p>Written from scratch with semantic HTML, modern CSS and vanilla JS.</p></div>
+    <div class="about-card"><i class="fas fa-mobile-alt"></i><h4>Mobile First</h4><p>Fully responsive across all device sizes, touch-friendly everywhere.</p></div>
+    <div class="about-card"><i class="fas fa-bolt"></i><h4>Blazing Fast</h4><p>No heavy frameworks, no bloat — pure performance-first architecture.</p></div>
+    <div class="about-card"><i class="fas fa-lock"></i><h4>Privacy First</h4><p>No tracking, no data collection. Everything runs locally in your browser.</p></div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-icon sm"><i class="fas fa-infinity"></i></div>
+      <span>OmniCalc <strong>Pro</strong></span>
+    </div>
+    <p class="footer-copy">© 2026 OmniCalc Pro · Designed &amp; Developed by <strong>Rishabh Shah</strong></p>
+    <div class="footer-links">
+      <a href="https://github.com/shahrishabh1513-jsk" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
+      <a href="mailto:rishabh@example.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="./JS/script.js"></script>
 </body>
 </html>
